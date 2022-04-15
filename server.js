@@ -36,37 +36,37 @@ app.get('/pokemon/:id', (req, res) => {         //app.get('/fruits/:indexOfFruit
 
 
 
-// New Route
-app.get('/pokemon/new', (req, res) => {
+// // New Route
+// app.get('/pokemon/new', (req, res) => {
 
-});
-
-
-
-
-// Edit Route
-app.get('/pokemon/:id/edit', (req, res) => {
-
-});
-
-
-// Create Route
-app.post('/pokemon', (req, res) => {
-
-});
-
-
-// Update Route
-app.put('/pokemon/:id', (req, res) => {
-
-});
+// });
 
 
 
-// Delete Route
-app.delete('pokemon/:id', (req, res) => {
 
-});
+// // Edit Route
+// app.get('/pokemon/:id/edit', (req, res) => {
+
+// });
+
+
+// // Create Route
+// app.post('/pokemon', (req, res) => {
+
+// });
+
+
+// // Update Route
+// app.put('/pokemon/:id', (req, res) => {
+
+// });
+
+
+
+// // Delete Route
+// app.delete('pokemon/:id', (req, res) => {
+
+// });
 
 
 
