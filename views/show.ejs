@@ -7,7 +7,21 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <h1>Pokemon Show Page</h1>
+    <h1>Pokemon Show Page</h1> <br />
+     <%=onePokemon.name %> <br />
+     <img src="<%=onePokemon.img%>"/> <br />
+     <% for(let i = 0; i < onePokemon.type.length; i++) { %> 
+     Types: <%=onePokemon.type[i]%> <br />
+     <% } %>
+    <ul>Stats:
+        <li>HP: <%=onePokemon.stats.hp%></li>
+        <li>Attack:<%=onePokemon.stats.attack%></li>
+        <li>Defense: <%=onePokemon.stats.defense%></li> <br /><br />
+    </ul>
 
-</body>
+
+     
+     <a href="/pokemon/">Back To Index</a>
+    </body>
 </html>
+

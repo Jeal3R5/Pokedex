@@ -1,10 +1,12 @@
+require("dotenv").config()
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
-const Pokemon = require('./models/pokemon.js');
+const pokemon = require('./models/pokemon.js');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-require("dotenv").config()
+const res = require("express/lib/response");
+const req = require("express/lib/request");
 
 
 //Middleware
@@ -15,32 +17,23 @@ app.use(methodOverride('_method'));
 
 
 
-
-app.get('/', (req, res) => {
-    res.send('You are home!');
-});
-
-
 // Index Route
 
-app.get('/pokemon', (req, res) => {         //ex: app.get('/fruits/', (req, res) => {
-    res.render('index.ejs', { data: Pokemon });                                    //ex: res.send(fruits);
+app.get('/pokemon/', (req, res) => {         //ex: app.get('/fruits/', (req, res) => {
+    res.render('index.ejs', { pokemon: pokemon });                                    //ex: res.send(fruits);
 });
-
-
-// Show Route
-
-// app.get('/pokemon/:id', (req, res) => {         //app.get('/fruits/:indexOfFruitsArray', (req, res) => {
-//     res.render('show.ejs', { data: Pokemon[req.params.id] })
-// });
-
 
 
 // New Route
 // app.get('/pokemon/new', (req, res) => {
+//     res.render('new.ejs'), {data: ???}
+//  });
 
-// });
+// Show Route
 
+app.get('/pokemon/:id', (req, res) => {       
+    res.render('show.ejs', { onePokemon: pokemon[req.params.id] });
+});
 
 
 
@@ -52,7 +45,8 @@ app.get('/pokemon', (req, res) => {         //ex: app.get('/fruits/', (req, res)
 
 // // Create Route
 // app.post('/pokemon', (req, res) => {
-
+// pokemon.push(req.body);
+// res.redirect('/pokemon')
 // });
 
 
