@@ -9,7 +9,7 @@ const methodOverride = require('method-override');
 //Middleware
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('tiny'));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
 
 
@@ -30,13 +30,13 @@ app.get('/pokemon', (req, res) => {         //ex: app.get('/fruits/', (req, res)
 
 // Show Route
 
-app.get('/pokemon/:id', (req, res) => {         //app.get('/fruits/:indexOfFruitsArray', (req, res) => {
-    res.render('show.ejs', { data: Pokemon[req.params.id] })
-});
+// app.get('/pokemon/:id', (req, res) => {         //app.get('/fruits/:indexOfFruitsArray', (req, res) => {
+//     res.render('show.ejs', { data: Pokemon[req.params.id] })
+// });
 
 
 
-// // New Route
+// New Route
 // app.get('/pokemon/new', (req, res) => {
 
 // });
@@ -44,7 +44,7 @@ app.get('/pokemon/:id', (req, res) => {         //app.get('/fruits/:indexOfFruit
 
 
 
-// // Edit Route
+//  Edit Route
 // app.get('/pokemon/:id/edit', (req, res) => {
 
 // });
