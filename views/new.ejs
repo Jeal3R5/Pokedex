@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Pokemon Create</title>
+    <%- include('./partials/head.ejs')%>
   </head>
   <body>
     <h1>Create Pokemon</h1>
     <form action="/pokemon" method="POST">
-      Name: <input type="text" name="name"><br />
-      Type: <input type="text" name="type" /><br />
+      Name: <input type="text" name="name" /><br>
+      Type: <input type="text" name="type" /><br>
       HP: <input type="text" name="hp" /> <br />
-      Attack: <input type="text" name="attack" /><br />
+      Attack: <input type="text" name="attack" /><br>
       Defense: <input type="text" name="defense" /> <br /><br><br>
-      <input type="image" name="img" value="http://clipart-library.com/data_images/45383.png" /> <br /><br />
-      <input type="submit" value="Create New Pokemon" /> <br><br><br>
+      Image: <img src="http://clipart-library.com/data_images/45383.png" alt="." width="250" height="250" /> <br /><br />
+      <input type="submit" value="Create Pokemon" /> <br><br><br>
     </form>
 
-    <a href="/pokemon/">Back To Index</a>
+    <a href="/pokemon/">Back To Index</a><br>
   </body>
+
+  <%- include('./partials/footer.ejs')%>
+
 </html>
