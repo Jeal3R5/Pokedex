@@ -6,18 +6,23 @@
   <body>
     <h1>Create Pokemon</h1>
     <form action="/pokemon" method="POST">
-      Name: <input type="text" name="name" /><br>
-      Type: <input type="text" name="type" /><br>
+      Name: <input type="text" name="name" /><br />
+      Type: <input type="text" name="type" /><br />
       HP: <input type="text" name="hp" /> <br />
-      Attack: <input type="text" name="attack" /><br>
-      Defense: <input type="text" name="defense" /> <br /><br><br>
-      Image: <img src="http://clipart-library.com/data_images/45383.png" alt="." width="250" height="250" /> <br /><br />
-      <input type="submit" value="Create Pokemon" /> <br><br><br>
+      Attack: <input type="text" name="attack" /><br />
+      Defense: <input type="text" name="defense" /> <br /><br /><br />
+      <img
+        src="http://clipart-library.com/data_images/45383.png"
+        alt="generic image"
+        width="250"
+        height="250"
+      />
+      <br /><br />
+      <input type="submit" value="Create Pokemon" /> <br /><br /><br />
     </form>
 
-    <a href="/pokemon/">Back To Index</a><br>
+    <a href="/pokemon/">Back To Index</a><br />
   </body>
 
   <%- include('./partials/footer.ejs')%>
-
 </html>

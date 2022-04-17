@@ -17,7 +17,7 @@ app.use(methodOverride("_method"));
 
 
 // Index Route
-app.get("/pokemon/", (req, res) => {
+app.get("/pokemon", (req, res) => {
   res.render("index.ejs", { pokemon: pokemon });
 });
 
@@ -29,42 +29,49 @@ app.get("/pokemon/new", (req, res) => {
 });
 
 
-
-// Show Route
-app.get("/pokemon/:id", (req, res) => {
-  res.render("show.ejs", { onePokemon: pokemon[req.params.id] });
-});
-//create route is the post route for the show route
-app.post("/pokemon", (req, res) => {      
-  pokemon.push(req.body);
+//  Delete Route
+app.delete("/pokemon/:id", (req, res) => {
+  const index = req.params.id;
+  console.log(index);
+  pokemon.splice(index, 1);
   res.redirect("/pokemon");
 });
-
-
-
-
-//  Edit Route
-// app.get('/pokemon/:id/edit', (req, res) => {
-
-// });    
-
-
 
 
 
 // Update Route
 // app.put('/pokemon/:id', (req, res) => {
 
-// });
+// });    
+
+
+
+//Create route is the post route for the show route
+app.post("/pokemon", (req, res) => {      
+  pokemon.push(req.body);
+  res.redirect("/pokemon");
+});  
+
+
+
+//  Edit Route
+// app.get('/pokemon/:id/edit', (req, res) => {
+
+// });        
 
 
 
 
-// // Delete Route
-// app.delete("pokemon/:id", (req, res) => {
-//   pokemon.splice(req.params.id, 1);
-//   res.redirect("/pokemon");
-// });
+
+
+
+// Show Route
+app.get("/pokemon/:id", (req, res) => {
+  res.render("show.ejs", { onePokemon: pokemon[req.params.id] });
+});
+
+
+
 
 
 

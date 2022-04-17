@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <%- include('./partials/head.ejs')%>
-
-</head>
-<body>
-     <h1><%=onePokemon.name%></h1> <br /><br />
-     <img src="<%= onePokemon.img %>"/> <br />
-     <% for(let i = 0; i < onePokemon.type.length; i++) { %> 
-     Types: <%=onePokemon.type[i]%> <br />
-     <% } %>
-    <ul>Stats:
-        <li>HP: <%=onePokemon.stats.hp%></li>
-        <li>Attack: <%=onePokemon.stats.attack%></li>
-        <li>Defense: <%=onePokemon.stats.defense%></li> <br /><br />
+  </head>
+  <body>
+    <h1><%=onePokemon.name%></h1>
+    <br /><br />
+    <img src="<%= onePokemon.img %>" /> <br />
+    <% for(let i = 0; i < onePokemon.type.length; i++) { %> Types:
+    <%=onePokemon.type[i]%> <br />
+    <% } %>
+    <ul>
+      Stats:
+      <li>HP: <%=onePokemon.stats.hp%></li>
+      <li>Attack: <%=onePokemon.stats.attack%></li>
+      <li>Defense: <%=onePokemon.stats.defense%></li>
+      <br /><br />
     </ul>
     <br /><br /><br />
-     <a href="/pokemon/">Back To Index</a>
-    </body>
-    
-    <%- include('./partials/footer.ejs')%>
+    <a href="/pokemon/">Back To Index</a>
+  </body>
 
+  <%- include('./partials/footer.ejs')%>
 </html>
-
