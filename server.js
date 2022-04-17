@@ -16,18 +16,18 @@ app.use(methodOverride('_method'));
 
 
 
-
 // Index Route
 
-app.get('/pokemon/', (req, res) => {         //ex: app.get('/fruits/', (req, res) => {
-    res.render('index.ejs', { pokemon: pokemon });                                    //ex: res.send(fruits);
+app.get('/pokemon/', (req, res) => {         
+    res.render('index.ejs', { pokemon: pokemon });                           
 });
 
 
-// New Route
-// app.get('/pokemon/new', (req, res) => {
-//     res.render('new.ejs'), {data: ???}
-//  });
+
+//New Route
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.ejs')
+ });
 
 // Show Route
 
@@ -44,10 +44,10 @@ app.get('/pokemon/:id', (req, res) => {
 
 
 // // Create Route
-// app.post('/pokemon', (req, res) => {
-// pokemon.push(req.body);
-// res.redirect('/pokemon')
-// });
+app.post('/pokemon', (req, res) => {
+pokemon.push(req.body);
+res.redirect('/pokemon')
+});
 
 
 // // Update Route

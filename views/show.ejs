@@ -7,8 +7,7 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <h1>Pokemon Show Page</h1> <br />
-     <%=onePokemon.name %> <br />
+     <h1><%=onePokemon.name %></h1> <br /><br />
      <img src="<%=onePokemon.img%>"/> <br />
      <% for(let i = 0; i < onePokemon.type.length; i++) { %> 
      Types: <%=onePokemon.type[i]%> <br />
@@ -19,8 +18,6 @@
         <li>Defense: <%=onePokemon.stats.defense%></li> <br /><br />
     </ul>
 
-
-     
      <a href="/pokemon/">Back To Index</a>
     </body>
 </html>
