@@ -4,11 +4,11 @@
     <%- include('./partials/head.ejs')%>
   </head>
   <body>
-    <h1><%=onePokemon.name%></h1>
+    <h1> <%=onePokemon.name%> </h1>
     <br /><br />
     <img src="<%= onePokemon.img %>" /> <br />
-    <% for(let i = 0; i < onePokemon.type.length; i++) { %> Types:
-    <%=onePokemon.type[i]%> <br />
+    <% for(let i = 0; i < onePokemon.type.length; i++) { %> 
+  Types: <%=onePokemon.type[i]%> <br />
     <% } %>
     <ul>
       Stats:
@@ -18,6 +18,8 @@
       <br /><br />
     </ul>
     <br /><br /><br />
+    <a href="/pokemon/<%=id%>/edit">Edit Pokemon</a><br><br>
+   
     <a href="/pokemon/">Back To Index</a>
   </body>
 

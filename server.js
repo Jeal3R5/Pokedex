@@ -32,7 +32,6 @@ app.get("/pokemon/new", (req, res) => {
 //  Delete Route
 app.delete("/pokemon/:id", (req, res) => {
   const index = req.params.id;
-  console.log(index);
   pokemon.splice(index, 1);
   res.redirect("/pokemon");
 });
@@ -67,10 +66,26 @@ app.post("/pokemon", (req, res) => {
 
 //  Edit Route
 app.get('/pokemon/:id/edit', (req, res) => {
-  
+  res.render("edit.ejs", {onePokemon: pokemon[req.params.id], id: req.params.id})
 });        
 
 
+app.put('/pokemon/:id', (req, res) => {
+  const editPoke = {
+    name: req.body.name,
+    img: req.body.img,
+    type: req.body.type.split(", "),
+    stats: {
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense
+    }
+  
+  }   
+  
+  pokemon[req.params.id] = editPoke
+  res.redirect('/pokemon')
+})
 
 
 
@@ -78,7 +93,7 @@ app.get('/pokemon/:id/edit', (req, res) => {
 
 // Show Route
 app.get("/pokemon/:id", (req, res) => {
-  res.render("show.ejs", { onePokemon: pokemon[req.params.id] });
+  res.render("show.ejs", { onePokemon: pokemon[req.params.id], id: req.params.id });
 });
 
 
