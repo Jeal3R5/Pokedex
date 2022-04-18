@@ -47,17 +47,28 @@ app.delete("/pokemon/:id", (req, res) => {
 
 
 //Create route is the post route for the show route
-app.post("/pokemon", (req, res) => {      
-  pokemon.push(req.body);
+app.post("/pokemon", (req, res) => {   
+  const newPoke = {
+    name: req.body.name,
+    img: req.body.img,
+    type: req.body.type.split(", "),
+    stats: {
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense
+    }
+  
+  }   
+  pokemon.push(newPoke);
   res.redirect("/pokemon");
 });  
 
 
 
 //  Edit Route
-// app.get('/pokemon/:id/edit', (req, res) => {
-
-// });        
+app.get('/pokemon/:id/edit', (req, res) => {
+  
+});        
 
 
 
